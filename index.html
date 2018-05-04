@@ -105,6 +105,19 @@
       </div>
     </footer>
     <script>
+    // Realizando funciones al momento que se esta aumentado o disminuyendo la resolucion de la pantalla pero en tiempo real, sin recargar la pantalla.
+    // matchMedia(): Cuando llamamos la API a través de matchMedia(), nos retorna el objeto MediaQueryList con dos atributos que nos permiten determinar si un media corresponde al estado actual del navegador. Estos dos atributos son el matches y el media. El primero retorna un booleano que verifica si se cumple la condición y el segundo almacena la regla.
+      var consulta = window.matchMedia('(max-width: 800px)');
+      consulta.addListener(mediaQuery);
+
+      function mediaQuery() {
+        if (consulta.matches) {
+          console.log('se cunplio mi condicion');
+        } else {
+          console.log('no se cumplio');
+        }
+      }
+    //
       var $burguerButton = document.getElementById('burguer-button');
       var $menu = document.getElementById('menu');
 
