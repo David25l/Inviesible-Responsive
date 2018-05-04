@@ -122,9 +122,11 @@
         if (consulta.matches) {
           console.log('se cunplio mi condicion');
           $burguerButton.addEventListener('touchstart', toggleMenu);
+          $burguerButton.style.display = 'inline-block'; //Creadno la condicion para que el toggleMenu aparezca solo en 500px de resolucion.
         } else {
           $burguerButton.removeEventListener('touchstart', toggleMenu);
           console.log('no se cumplio');
+          $burguerButton.style.display = 'none'; //Ocultando el toggleMenu a pantallas de resolucion superior de 500px.
         }
       }
       mediaQuery();
