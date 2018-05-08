@@ -38,7 +38,7 @@
     <section id="guitarras" class="guitarras contenedor"> <!-- guitarras -->
       <h2>Nuestras guitarras</h2> <!-- titulo -->
       <article class="guitarra"> <!-- guitarra 1 -->
-        <img class="derecha" src="images/invie-acustica.png"alt="Guitarra Invie Acustica" width="350">
+        <img class="derecha" data-src="images/invie-acustica.png"alt="Guitarra Invie Acustica" width="350">
         <div class="contenedor-guitarra-a">
           <h3 class="title-b">Invie Acustica</h3>
           <ol> <!-- lista ordenada -->
@@ -49,7 +49,7 @@
         </div>
       </article>
       <article class="guitarra b"> <!-- guitarra 2 -->
-        <img class="izquierda" src="images/invie-classic.png" alt="Guitarra Invie Classic" width="350">
+        <img class="izquierda" data-src="images/invie-classic.png" alt="Guitarra Invie Classic" width="350">
         <div class="contenedor-guitarra-b">
           <h3 class="title-b">Invie Classic</h3>
           <ol> <!-- lista ordenada -->
@@ -63,7 +63,7 @@
     <footer class="footer">
       <div class="contenedor">
         <div class="contacto">
-          <img src="images/invie-white.png" alt="logotipo-blanco">
+          <img data-src="images/invie-white.png" alt="logotipo-blanco">
           <a href="tel:+50762555534"><strong>Telefono</strong> <span>62555534</span> </a>
           <a href="mailto:contacto@invie.com"><strong>E-mail</strong> <span>contacto@invie.com</span> </a>
         </div>
@@ -104,6 +104,7 @@
         </form>
       </div>
     </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/blazy/1.5.4/blazy.min.js"></script>
     <script>
     // Realizando funciones al momento que se esta aumentado o disminuyendo la resolucion de la pantalla pero en tiempo real, sin recargar la pantalla.
     // matchMedia(): Cuando llamamos la API a través de matchMedia(), nos retorna el objeto MediaQueryList con dos atributos que nos permiten determinar si un media corresponde al estado actual del navegador. Estos dos atributos son el matches y el media. El primero retorna un booleano que verifica si se cumple la condición y el segundo almacena la regla.
@@ -131,8 +132,12 @@
       }
       mediaQuery();
     //
-      // $burguerButton.addEventListener('touchstart', toggleMenu);
-      //
+
+      //Lazy loading
+
+      var bLazy = new Blazy ({
+        selector: 'img'
+      })
     </script>
   </body>
 </html>
